@@ -1,0 +1,22 @@
+BST:- 
+    Problem- if in case of sqwed tree the insertion, deletion, traversal becomes o(n)
+
+AVL:- 
+    Solution- creating a balanced search tree,  
+                so that all the operations can be solved in o(log n)
+                every node must balanced i.e. a node can having -1, 0, 1 only as the difference of height of left & right subtree.
+
+    1. Insert normally node n.
+    2. Start from node n & find the node that makes the tree unbalanced, bottom up.
+    3. Using one of the 4 rules of rotations.
+        
+
+    4 Rules:-
+        1) LL
+        2) RR
+        3) LR
+        4) RL
+
+    Time Complexities:-
+        insertion-
+            log(N) + O(N)

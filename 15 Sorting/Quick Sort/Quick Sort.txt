@@ -1,0 +1,38 @@
+Quick Sort:
+    pivot-> reference point/ any random element in the array.
+            => after first pass
+        all the elements < P will be on LHS of P.
+        all the elements > P will be at the RHS of the P.
+
+        5, 4, 3, 2, 1
+            P->4
+    pass 1:
+        1, 3, 2    4    5
+          P->3
+       1, 2   3    4    5
+          P->2
+
+Q. how to put pivot at correct position?
+    * Random element
+    * Corner element
+    * Middle element
+
+Recurrence Relation of Quick sort:-
+        T(N) = T(K) + T(N-K-1) + O(N)
+ 
+    worst case: (pivot is largest/smallest) 
+                i.e. k=0
+            T(N) = T(N-1) + O(N)
+                 = O(N^2)
+ 
+    best case: (pivot is at center) 
+                i.e. k=N/2
+            T(N) = T(N/2) + T(N/2) + O(N)
+                 = 2T(N/2) + O(N)
+                 = O(N*log(N))
+
+
+Notes:
+    * Not stable.
+    * In-place.
+    * Merge Sort is better in linked lists due to memory allocation is not continuous.

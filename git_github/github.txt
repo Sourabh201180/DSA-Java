@@ -1,0 +1,47 @@
+Git:- version control system is a tool that help to track changes in code, git is a version control system.
+        - popular, free & open source, fast & scalable
+        1. to track the history
+        2. collaborate
+
+GitHub:- website that allows developers to store and manage their code using Git.
+    - upload our project on it, so it can be accessible.
+    - uploaded in the form of repository.
+
+        Steps:-
+                1. Repository creation
+                2. clone the repository to your local machine using the link
+                3. commit the changes you made
+                4. push the updated code to the repository
+
+        Clone & Status
+                clone - cloning a repository on our local machine
+                        git clone <link>
+
+                status - displays the state of the code
+                        git status
+
+        Types of files:-
+                untracked  - new files that git doesn't yet track
+                modified   - changed
+                staged     - file is ready to be commited
+                unmodified - unchanged
+
+        Add & Commit
+                add - adds new or changed files in your working directory to the Git staging area.
+                        git add <file-name>
+                        git add .
+
+                commit - it is used to record the change you made.
+                        git commit -m "some message"
+                        git commit -m "implemented user part"
+
+                push - upload local repo content to remote repo
+                        git push origin main
+
+                init - used to create a new git repo
+                        git init
+                        git remote add origin <link>
+                        git remote -v (to verify remote)
+                        git branch (to check branch)
+                        git branch -M main (to rename branch)
+                        git push origin main

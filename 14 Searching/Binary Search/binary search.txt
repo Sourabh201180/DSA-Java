@@ -1,0 +1,71 @@
+  Q. Why Binary search?
+ans. because, the worst case time complextity of Binary search is O(log N), whereas in the case of linear search it is O(N).
+    must condition for Binary Search is that list must be sorted in any order.
+            Total no. of comparation in worst case = log N
+            best case => O(1)   // when the first middle element is the searched element. were size doesn't matters
+            so, with each iteration/step it reduces the sample space into halfs
+
+                                0th      N     =>  N/2^0
+                                1st     N/2    =>  N/2^1
+                                2nd     N/4    =>  N/2^2
+                                3rd     N/8    =>  N/2^3
+                                        .
+                                        .
+                                        .
+                                kth     1      =>  N/2^k
+
+Binary Search:
+    1. array must be sorted(must condition), either assending or descending
+        ex-
+            assending
+                [2, 5, 9, 15, 18, 33, 45, 63, 99, 103];
+            descending
+                [63, 45, 18, 15, 10, 7, 3, 1];
+
+    2. max. comparation
+        N => no. of elements
+
+    3. if search > last element :
+        then element not found, loop breaking condition 
+        (i.e start > end)
+
+               0  1  2  3   4   5   6   7   8   9 
+        arr = [2, 4, 6, 9, 11, 12, 14, 20, 36, 48]
+        target = 36;
+
+step-1) find the middle element.
+step-2) compare the middle element with the target element.
+        i.e if (target > mid) => Search in right subarray
+            if (target < mid) => Search in left subarray
+step-3) if middle element == target element   // ans
+        i.e if (target == mid)
+
+                            (9+0)/2 => 4
+            2, 4, 6, 9,         11,         12, 14, 20, 36, 48      
+                            target != mid
+                            i.e 36 > 11
+                    since, target is greater than mid one 
+            so, move the f=mid+1 and l=a[size-1]
+
+                            (4+9)/2 => 6
+                11, 12,          14,         20, 36, 48
+
+                            target != mid
+                            i.e 36 > 14
+                    since, target is greater than mid one 
+            so, move the f=mid+1 and l=a[size-1]  
+
+
+                            (6+9)/2 => 7
+                        20,                     36, 48
+                            target != mid
+                            i.e 36 > 20
+                    since, target is greater than mid one 
+            so, move the f=mid+ and l=a[size-1]
+
+
+                            (7+9)=> 8
+                        36,              48
+                            target == mid
+                        element found at 8 index
+                            break;

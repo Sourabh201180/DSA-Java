@@ -1,0 +1,5 @@
+Cycle sort:
+    * when given nos. from range 1, N => use cyclic sort.
+    in one single pass we have to sort the whole list...
+    
+    3, 5, 2, 1, 4 

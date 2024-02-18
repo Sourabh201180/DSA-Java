@@ -1,0 +1,86 @@
+Searching in matrices:
+
+    18      45      17
+    63      99      1
+    15      101     12
+
+    // Linear Approach
+    __________________________________________
+    
+    for r=0; r<n; r++
+        for c=0; c<n; c++
+            if(arr[r][c]) == target
+                print element found at r,c
+            
+    print element not found!
+    __________________________________________
+
+    target = 15
+    element found at 2,0
+
+    N*N => N^2 => O(n^2)
+               => O(m*n)
+
+
+    // Binary Approach
+
+here, each and every row & column were sorted. think it for searching a large dataset, 
+    so, overall we have to minimize the time complexity, and search space.
+    main motive is to reduce the search space.
+    1. comparation
+    2. find lower and upper bound
+    3. start searching from row 0 and last column
+
+// Scenario - 1
+Q. matrix is sorted in row wise and column wise manner?
+    10  20  30  40
+    15  25  35  45
+    28  29  37  49
+    33  34  38  50
+
+    target = 37
+
+    case-1:
+        if element == target
+            elem found
+
+    case-2:
+        if element < target
+            r++
+    
+    case-3: 
+        if element > target
+            c--
+
+    n + n => 2n  => O(n)
+
+// Scenario - 2
+Q. search in sorted matrix?
+    1   2   3   4
+    5   6   7   8
+    9   10  11  12
+    13  14  15  16
+
+    1. search for the middle column/row
+    2. take the middle row/column perform Binary search on it.
+
+    case-1:
+        if elem == target
+            // ans
+
+    case-2:
+        if elem > target
+            // ignore row after this
+
+    case-3:
+        if elem < target
+            // ignore above rows
+
+    if in the end 2 rows were remaining:
+        1   2   3   4
+        5   6   7   8   
+
+        check-1:  check whether the mid col you are at contains the answer i.e. [2,6]
+        check-2:  consider the four parts.
+
+        log(N) + log(M) => O(log(N))

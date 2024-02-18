@@ -1,0 +1,135 @@
+arrays, stacks, queues, LL  -> all these are linear data structures
+
+now about heirarchical data structures / non linear data structures 
+    (file organizations, rdbms software...)
+
+Binary Tree:-
+        at most two child possible of the parent node
+
+                    root
+                   /    \
+             child 1     child 2
+            /      \           \
+         child3    child4      child5(leaf)
+
+Types of BT:
+    1. full BT
+        * either node has 0 or 2 children only.
+
+    2. complete BT
+        * all the levels are completely filled except the last levels.
+        * the last level has all nodes in left as possible.
+
+    3. perfect BT
+        * all leaf nodes are at same level.
+
+    4. balanced BT
+        * height of tree at max. log(N).
+            {N->nodes}
+
+    5. degenerate tree
+        * Skew trees(left or right).
+
+
+Traversal Techniques:
+        BFS:-
+            Breath First Search
+            (level wise/order traversal)
+
+        DFS:-
+            Depth First Search
+            (depth wise traversal)
+                Preorder Traversal   (Root  Left  Right)
+                Inorder Traversal    (Left  Root  Right)
+                postorder Traversal  (Left  Right  Root) 
+
+
+BFS(level order traversal) implementation
+    1. we require a queue DFS
+    2. Linear DS for storing the root values (ArrayList<ArrayList>)
+
+    class Solution {
+        public List<List<Integer> bfs(TreeNode root) {
+            List<List<Integer> ds = new LinkedList<List<Integer>();
+            if(root == null) {
+                return ds;
+            }
+
+            Queue<TreeNode> queue = new LinkedList<TreeNode>();
+            queue.offer(root);
+            
+            while(!queue.isEmpty()) {
+                int levelNum = queue.size();
+                List<Integer> subList = new LinkedList<Integer>();
+                for(int i=0; i<levelNum; i++) {
+                    if(queue.peek().left != null) {
+                        queue.offer(queue.peek().left);
+                    }
+                    if(queue.peek().right != null) {
+                        queue.offer(queue.peek().right);
+                    }
+                    subList.add(queue.poll().val);
+                }
+                ds.add(subList);
+            }
+
+            return ds;
+        }
+
+        public static List<List<Integer> BFS(Node root) {
+            List<List<Integer>> ds = new LinkedList<List<>>();
+
+            if(root == null) {
+                return ds;
+            }
+
+            Queue<Node> q = new LinkedList<>();
+            q.offer(root);
+
+            while(!q.isEmpty()) {
+                int n = q.size();
+                List<Node> subList = new LinkedList<>();
+                for(int i=0; i<n; i++) {
+                    if(q.peek().left != null) {
+                        q.offer(q.peek().left);
+                    }
+                    if(q.peek().right != null) {
+                        q.offer(q.peek().right);
+                    }
+                    subList.add(q.poll());
+                }
+                ds.add(subList);
+            }
+
+            return ds;
+        } 
+
+        // DFS - 3ways pre, in, post
+        public static void DFSPOT(Node root) {
+            if(root == null) {
+                return;
+            }
+
+            System.out.println(root.val);
+            DFSPOT(root.left);
+            DFSPOT(root.right);
+        }
+        public static void DFSInOT(Node root) {
+            if(root == null) {
+                return;
+            }
+
+            DFSPOT(root.left);
+            System.out.println(root.val);
+            DFSPOT(root.right);
+        }
+        public static void DFSPoOT(Node root) {
+            if(root == null) {
+                return;
+            }
+
+            DFSPOT(root.left);
+            DFSPOT(root.right);
+            System.out.println(root.val);
+        }
+    }

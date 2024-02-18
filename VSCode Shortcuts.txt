@@ -1,0 +1,15 @@
+control + b
+control + `
+control + j
+control + n
+control + p
+control + up arrow
+control + down arrow
+control + p then @
+control + \
+control + w
+can use abbreviation
+control + Enter
+control + shift + L
+control + d
+shift + alt + down

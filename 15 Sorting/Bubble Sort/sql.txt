@@ -1,0 +1,24 @@
+jabalpur cus
+    cus_id      name
+    1           cant
+    2           panagar
+
+candidates 
+    can_id      name        cus_id
+    1           ashok           1
+    1           lakhan          2 
+
+voters
+    vot_id      name    can_id
+    1           shyam       1
+    2           ram         1
+    3           golu        2 
+
+
+    can.name    cus.name    can.vot
+    ashok       cant            2
+    lakhan      panagar         1
+
+
+    Select  k.name, c.name, count(v.vot_id) from cus as c inner join candidates as k inner voters as v 
+    on c.cus_id=k.cus_id and k.can_id=v.can_id group by c.name having count(v.vot_id)>500;

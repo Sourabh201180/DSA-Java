@@ -1,0 +1,37 @@
+Merge Sort: (not an inplace algorithm) i.e. we required extra arrays to implement
+    1. each time it divides the array into two parts
+    2. get both parts sorted via recursion
+    3. merge two sorted parts 
+    4. if any array contains remaining elements directly put them to the resultant array
+
+                8, 3, 4, 12, 5, 6
+                 /              \
+                /                \
+            8, 3, 4            12, 5, 6
+            /      \           /       \
+           /        \         /         \
+         8, 3        4      12, 5        6
+        /    \       |     /    \        |     
+       /      \      |    /      \       |    
+      8        3     |   12       5      |   
+       \      /      |     \     /       |  
+        \    /       |      \   /        | 
+         3, 8        4      5, 12        6
+          \         /          \        /
+           \       /            \      /
+            3, 4, 8             5, 6, 12
+                \                  /
+                 \                /
+                 3, 4, 5, 6, 8, 12
+
+            arr1 = {8, 3, 4}
+            arr2 = {12, 5, 6}
+
+            arr3 = new int[3 + 3]
+  resultant arr3 = {3, 4, 5, 6, 8, 12}
+
+Time Complexity:
+            O(N*log(N))
+
+space Complexity:
+            O(N)  i.e. not an inplace sorting algorithm

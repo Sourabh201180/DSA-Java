@@ -1,0 +1,297 @@
+interface  java.util.Collection
+
+Collection:
+      Collection is an interface in util package, which consist of inbuilt library classes, interfaces, methods, fields...
+      which were used for implementing various Data Structure for Operating on larger dataset.
+      in this we get to know how to perform different operation over the object using different data Structures.
+
+      OS -> Ordering & Sorting
+
+      _______________________________________________________________________________________________________________________________________________________________________  
+      |                                                                                                                                                                     |
+      |                                                                           interface Iterable                                                                        |
+      |                                                                                   |                                                                                 |
+      |                                                                                   |                                                                                 |
+      |                                                                                   |                                                                                 |
+      |                                                                                   |                                                                                 |
+      |                                                                         interface Collection                                                                        |
+      |                                                                        /          |         \                                                                       |                                                 
+      |                                                                      /            |           \                                                                     | 
+      |                                                                    /              |             \                                                                   | 
+      |                                                                  /                |               \                                                                 | 
+      |                                                                /                  |                 \                                                               |       
+      |                                                              /                    |                   \                                                             |       
+      |                                                            /                      |                     \                                                           |       
+      |                                                          /                        |                       \                                                         |             
+      |                                                        /                          |                         \                                                       |             
+      |                                                      /                            |                           \                                                     |             
+      |                                                    /                              |                             \                                                   |                   
+      |                                                  /                                |                               \                                                 |                   
+      |                                                /                                  |                                 \                                               |                   
+      |                                              /                                    |                                   \                                             |                         
+      |                                            /                                      |                                     \                                           |                         
+      |                                          /                                        |                                       \                                         |                         
+      |                                        /                                          |                                         \                                       |                               
+      |                           interface Set                                    interface List                            interface Queue                                |             
+      |                           /          \                                   /        |      \                          /             \                                 | 
+      |                          /            \                                 /         |       \                        /               \                                | 
+      |                         /              \                  interface Ran/domAccess |        \                      /                 \                               | 
+      |                        /                \                       /     /  \        |         \                    /                   \                              | 
+      |                       /                  \                     /     /    \       |          \                  /                     \                             | 
+      |              class HashSet      interface SortedSet   class Vector(O)    class ArrayList(O)   class LinkedList(O)           class PriorityQueue(OS)                 |
+      |                     |                     |                   |                                                                                                     |
+      |                     |                     |                   |                                                                                                     |
+      |                     |                     |                   |                                                                                                     |
+      |                     |                     |                   |                                                                                                     |
+      |        class LinkedHashSet(O)  interface NavigableSet  class Stack(O)                                                                                               |
+      |                                           |                                                      interface Map                                                      |
+      |                                           |                                                     /     |       \                                                     |
+      |                                           |                                                    /      |        \                                                    |                                                                      
+      |                                           |                                                   /       |         \                                                   |                
+      |                                  class TreeSet(OS)                                           /        |          \                                                  |                      
+      |                                                                                             /         |           \                                                 |                      
+      |                                                                                            /          |            \                                                |                      
+      |                                                                                           /           |             \                                               |                      
+      |                                                                                          /            |              \                                              |                      
+      |                                                                                         /             |               \                                             |                      
+      |                                                                                        /              |                \                                            |                            
+      |                                                                             class Hashtable     class HashMap     interface SortedMap                               |
+      |                                                                                                       |                     |                                       |
+      |                                                                                                       |                     |                                       |
+      |                                                                                                       |                     |                                       |
+      |                                                                                                       |                     |                                       |
+      |                                                                                            class LinkedHashMap(O)  interface NavigableMap                           |
+      |                                                                                                                             |                                       |
+      |                                                                                                                             |                                       |
+      |                                                                                                                             |                                       |
+      |                                                                                                                             |                                       |
+      |                                                                                                                     class TreeMap(OS)                               |
+      |                                                                                                                                                                     |
+      |_____________________________________________________________________________________________________________________________________________________________________| 
+
+
+              Ordering:                                                           Sorting:
+          ( FILO     FIFO )                                                       (index)
+      1. access ordering                                                      1. natural Ordering 
+      2. insertion ordering                                                        (assending/dessending)
+      3. index ordering                                                           A-Z, a-z, 0-9, ....
+
+                                            interface Collection<E>
+                                                  methods():-
+
+                                          boolean  ->  add(Object o)
+                                          boolean  ->  contains(Object o)
+                                          boolean  ->  isEmpty()
+                                          Iterator ->  iterator()
+                                          boolean  ->  remove(Object o)
+                                          int      ->  size()
+
+########################################################################################################
+
+interface List<E> (in general):
+                  1. Index based Collection.
+                  2. Duplicate Records allowded.
+
+                           methods():
+                      void  ->  add(int index, Object o)
+                    Object  ->  get(int index)
+                    Object  ->  remove(int index)
+                    Object  ->  set(int index, Object o)
+
+
+      * class ArrayList:
+                java.util.ArrayList<E>
+
+            1. Best choice for frequent iteration(traversal).
+            2. Not a good choice for frequent insertion and deletion.
+            3. Implements RandomAccess interface(Marker Interface i.e. the blank interface) thus, a randomly accessible class.
+            4. Non - Thread safe countor part of Vector.
+            5. Increases the size by 50%.
+            6. It is implemented as a dynamic array.
+
+      * class Vector:
+                java.util.Vector<E>
+
+            1. Thread safe countor part of the ArrayList, key methods of this class are synchronized.
+            2. Increases the size by 100%.
+            3. rest of the properties are same as ArrayList.
+
+      * class LinkedList:
+                java.util.LinkedList<E>
+
+            1. Best choice for frequent insertion and deletion.
+            2. Not a good choice for frequent iteration(traversal).
+            3. It is internally implemented as the doubly linked list.
+                              
+            _________________________________________________________________________________________________________
+            |                                                                                                       |                                         
+            |                                          class LinkedList                                             |    
+            |                                          /        |      \                                            |     
+            |                                        /          |        \                                          |       
+            |                                      /            |          \                                        |         
+            |                                    /              |            \                                      |           
+            |                                  /                |              \                                    |             
+            |                                /                  |                \                                  |               
+            |                              /                    |                  \                                |                 
+            |                            /                      |                    \                              |                   
+            |                 interface List<E>         interface Queue<E>        class Stack<E>                    |                             
+            |                                                                                                       |                
+            |            boolean -> add​(E e)            boolean ->  offer​(E e)      E  ->  push​(E item)             |                                                                                              
+            |                 E  -> get​(int index)           E  ->  poll()          E  ->  pop()                    |                                                                                        
+            |                 E  -> remove​(int index)        E  ->  peek()          E  ->  peek()                   |                                                                                        
+            |                                                                                                       |
+            |_______________________________________________________________________________________________________|
+
+
+      Conclution:- Only use the methods of any One interface at a time.
+                  i.e. for example if we use stack class
+                  then, we must have to use push(), peek() and pop() methods only over that particular list, not the other methods like poll() etc...
+
+
+########################################################################################################
+
+    java.util.Set<E>
+
+    interface Set<E> (in general):
+        1. Duplicate records not allowded.
+        2. Doesn't support indexing of records.
+
+            _________________________________________________________________________________________
+            |                                                                                       |
+            |                            interface Collection                                       |
+            |                                      |                                                |
+            |                                      |                                                |
+            |                                      |                                                |
+            |                               interface Set<E>                                        |
+            |                              /              \                                         | 
+            |                             /                \                                        |
+            |                            /                  \                                       |
+            |                           /                    \                                      |
+            |                    class HashSet          interface SortedSet                         |
+            |                          |                        |                                   |
+            |                          |                        |                                   |
+            |                          |                        |                                   |
+            |                class LinkedHashSet(O)     interface NavigableSet                      |
+            |                                                   |                                   |
+            |                                                   |                                   |
+            |                                                   |                                   |
+            |                                            class TreeSet(OS)                          |
+            |                                                                                       |
+            |_______________________________________________________________________________________|
+
+      * class HashSet :
+            1. A Hash based collection class, thus provides an efficient access.
+            2. Neither Ordered nor Sorted.
+
+      * class LinkedHashSet :
+            1. A Hash based collection class, thus provides an efficient access.
+            2. Ordered countor part of HashSet(but not sorted).
+
+      * class TreeSet :
+            1. A sorted collection(ordered & sorted).
+
+########################################################################################################
+
+      interface Queue<E> (in general):
+                  1. Doesn't support indexing of records.
+                  2. Duplicate Records allowded.
+
+            * class LinkedList :
+                  1. Not a sorted countor part of PriorityQueue(Only ordered).
+
+            * class PriorityQueue :
+                  1. A sorted collection(ordered & sorted).
+
+########################################################################################################
+
+########################################################################################################
+
+      interface Map<K, V> (in general):
+            1. Holds records in a key value pair format.
+            2. key cannot be Duplicate but value can.
+
+                            methods():
+                      Value   ->  put(Key key, Value value)
+                      Value   ->  get(Object key)
+                      Value   ->  remove(Object key)
+                      Set<K>  ->  keySet()
+                      boolean -> containsKey(Object key)
+                      boolean -> containsValue(Object value)
+
+            ___________________________________________________________________________________________
+            |                                                                                           |
+            |                               interface Map<K, V>                                         |
+            |                              /         |         \                                        |
+            |                             /          |          \                                       |
+            |                            /           |           \                                      |
+            |                           /            |            \                                     |
+            |                          /             |             \                                    |
+            |                         /              |              \                                   |
+            |                        /               |               \                                  |
+            |                       /                |                \                                 |
+            |                      /                 |                 \                                |
+            |                     /                  |                  \                               |
+            |            class Hashtable        class HashMap     interface SortedMap                   |
+            |                                        |                     |                            |
+            |                                        |                     |                            |
+            |                                        |                     |                            |
+            |                                        |                     |                            |
+            |                            class LinkedHashMap(O)  interface NavigableMap                 |
+            |                                                              |                            |
+            |                                                              |                            |
+            |                                                              |                            |
+            |                                                              |                            |
+            |                                                      class TreeMap(OS)                    |
+            |___________________________________________________________________________________________|
+
+
+      * class HashMap :
+            1. Hash based collection, thus provide an efficient access.
+            2. Best choice for frequent insertion & deletion.
+            3. Not a good choice for frequent iteration(traversal).
+            4. Null is allowded as key as well as value.
+            5. Non Thread safe countor part of HashTable.
+            6. Neither ordered nor sorted.
+
+      * class HashTable :
+            1. Thread safe countor part of HashMap (i.e. all the implemented methods are synchronized)
+            2. Null value is Neither allowded as key nor as value.
+            3. All other features are same as HashMap.
+
+      * class LinkedHashMap :
+            1. Best choice for frequent iteration(traversal).
+            2. Not a good choice for frequent insertion & deletion.
+            3. Ordered countor part of HashMap(but not sorted).
+
+      * class TreeMap :
+            1. A Sorted collection(ordered & sorted).
+
+########################################################################################################
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+                                                class Object
+                                        boolean  ->  equals​(Object obj)
+
+    public boolean equals​(Object obj)
+        Indicates whether some other object is "equal to" this one.
+        The equals method implements an equivalence relation on non-null object references:
+
+        It is reflexive: 
+                    for any non-null reference value x, x.equals(x) should return true.
+        It is symmetric: 
+                    for any non-null reference values x and y, x.equals(y) should return true if and only if y.equals(x) returns true.
+        It is transitive: 
+                    for any non-null reference values x, y, and z, if x.equals(y) returns true and y.equals(z) returns true, then x.equals(z) should return true.
+        It is consistent:   
+                    for any non-null reference values x and y, multiple invocations of x.equals(y) consistently return true or consistently return false, provided no information used in equals comparisons on the objects is modified.
+
+        For any non-null reference value x, x.equals(null) should return false.
+        The equals method for class Object implements the most discriminating possible equivalence relation on objects; that is, 
+        for any non-null reference values x and y, this method returns true if and only if x and y refer to the same object (x == y has the value true).
+
+
+                                                class String
+                                            String  ->  equals​(String name)
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////

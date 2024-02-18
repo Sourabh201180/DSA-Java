@@ -1,0 +1,7 @@
+Hybrid Sorting Algorithm:- (Tim Sort)
+        (Inbuild sort) python
+
+        Merge Sort + Insertion Sort
+                           |
+                      works well with 
+                   particially sorted data

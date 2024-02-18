@@ -1,0 +1,4 @@
+Abstract:- the basic meaning of abstract is incomplete. 
+        abstraction is one of the main pillar of OOPs, which basically provides the abstraction of data & behaviour.
+        we can not instantiate an abstract class.
+        abstract class can consist of abstract as well as non abstract method i.e. declared and well defined methods both.
