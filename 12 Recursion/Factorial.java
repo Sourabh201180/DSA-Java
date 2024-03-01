@@ -1,7 +1,9 @@
-class A {
+public class Factorial {
     public static void main(String[] args) {
-        System.out.println(factRecursive(5));
-        System.out.println(factIterative(5));
+        int n = 5;
+
+        System.out.println(factRecursive(n));
+        System.out.println(factIterative(n));
     }
 
     // recursive approach

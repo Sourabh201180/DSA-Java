@@ -2,19 +2,6 @@
     write a function that takes in a no. and prints it
     print first 5 numbers: 1 2 3 4 5
 
-    recursive call
-        if you are calling a function again and again, you can treat it as a seperate call in the stack
-
-        if their is no base condition it will execute infinitely,
-        so, it will generate StackOverflowError.
-
-    Recursion:-
-        a function calling itself.
-        * we use it to solve bigger/complex problems in a single way.
-        * you can convert the recursion solutions into iterations or vice versa.
-        * space complexity is not constant because of recursive calls.
-        * helps to break down the bigger problems into smaller problems.
-
     Visualize the recursive call- (recursive tree)
         print(1) -> print(2) -> print(3) -> print(4) -> print(5)
 */
@@ -30,6 +17,7 @@ public class REC_2 {
         recursivePrint(5);
     }   
 
+    // recursive approach
     static void recursivePrint(int n) {
         // base condition
         if(n > 1) {
@@ -39,6 +27,14 @@ public class REC_2 {
         System.out.println(n);
     }
 
+    // iterative approach
+    static void iterativePrint(int n) {
+        for(int i=1; i<=n; i++) {
+            System.out.println(i);
+        }
+    }
+
+    // normal method call
     static void print1(int n) {
         System.out.println(n);
     }
