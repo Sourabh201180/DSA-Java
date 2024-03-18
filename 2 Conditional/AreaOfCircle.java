@@ -1,4 +1,4 @@
-public class Q1 {
+public class AreaOfCircle {
     public float areaOfCircle(int radius) {
         return (float)Math.PI * radius * radius;
     }
@@ -6,7 +6,7 @@ public class Q1 {
     public static void main(String[] args) {
         int radius = 23;
 
-        Q1 q = new Q1();
+        AreaOfCircle q = new AreaOfCircle();
         System.out.println(q.areaOfCircle(radius));
-    }   
+    }
 }

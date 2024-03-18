@@ -1,4 +1,4 @@
-public class Q4 {
+public class Lcm_Hcf {
     public int findLcm(int a, int b) {
         int gcd = 1;
 
@@ -19,10 +19,11 @@ public class Q4 {
         int a = 12;
         int b = 9;
 
-        Q4 q = new Q4();
+        Lcm_Hcf q = new Lcm_Hcf();
         int lcm = q.findLcm(a, b);
         int hcf = q.findHcf(a, b);
 
+        System.out.println("Given no's: " + a + ", " + b);
         System.out.println("LCM: " + lcm);
         System.out.println("HCF: " + hcf);
     }

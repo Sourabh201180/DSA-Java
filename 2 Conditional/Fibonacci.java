@@ -1,6 +1,6 @@
 // 0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55
 
-public class Q21 {
+public class Fibonacci {
     static int n1 = 1;
     static int n2 = 1;
     static int n3 = 0;
@@ -23,7 +23,9 @@ public class Q21 {
             n3 = n1 + n2;
             n1 = n2;
             n2 = n3;
+
             System.out.print(n3 + " ");
+            
             printFibonacciRecursive(max-1);
         }
     }
@@ -31,12 +33,11 @@ public class Q21 {
     public static void main(String[] args) {
         int max = 10;
 
-        Q21 q = new Q21();
-        q.printFibonacci(max);
+        Fibonacci.printFibonacci(max);
 
         System.out.println();
 
         System.out.print("0 1 ");
-        q.printFibonacciRecursive(max-2);
+        Fibonacci.printFibonacciRecursive(max-2);
     }
 }

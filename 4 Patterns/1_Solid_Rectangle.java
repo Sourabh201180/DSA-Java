@@ -1,9 +1,9 @@
 /*
     Q. Solid Rectangle:
-    Nested Loops...
+        Nested Loops...
         for( rows ) {
             for( columns ) {
-
+                printing statement
             }
         }
 

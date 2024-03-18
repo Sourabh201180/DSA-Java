@@ -32,7 +32,7 @@ public class SortedMatrix {
         int rows = matrix.length;
         int cols = matrix[0].length;    // be cautious, matrix may be empty
 
-        if (rows == 1) {
+        if(rows == 1) {
             return binarySearch(matrix, 0, 0, cols-1, target);
         }
 
@@ -80,6 +80,5 @@ public class SortedMatrix {
         else {
             return binarySearch(matrix, rStart, cMid + 1, cols - 1, target);         
         }
-        
     }
 }
